@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.socket.io/3.1.1/socket.io.min.js" integrity="sha384-gDaozqUvc4HTgo8iZjwth73C6dDDeOJsAgpxBcMpZYztUfjHXpzrpdrHRdVp8ySO" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>MOVIE party</title>
+    <style>
+      #videoContainer{
+        display: none;
+      }
+    </style>
+</head>
+<body>
+  <div class="box" id = "input-form">
+    <label for="join-room-input">Join Room</label>
+    <input type="text" id = "join-room-input"  placeholder="Enter room code">
+    <br><br>
+    <button id = "join-btn">Join</button>
+    <br><br> 
+    <label for="create-room-input">Room Code</label>
+    <input type="text" id = "create-room-input"  placeholder=" Code" disabled>
+    <br><br>
+    <button id = "create-btn">Create And Join</button>
+  </div>
+
+  <div id = videoContainer>
+    <div class = "video-c">
+      <video id = "videoPlayer" class = "video">
+          <source src = "/video" type = "video/mp4"/>
+      </video>
+      <div class="video-controls">
+        <div><button id = "play-pause">&#9658</button></div>
+        <div class = "progress-bar-div"><progress id = "progress-bar" max = 100 min =0></progress></div>
+        <div><button id="volinc" type="button">Vol+</button></div>
+        <div><button id="voldec" type="button">Vol-</button></div>
+        <div><button id = "fullscreen">Fullscreen</button></div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src = "web.js"></script>
+</html>

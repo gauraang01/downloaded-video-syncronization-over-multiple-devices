@@ -1,0 +1,22 @@
+{
+  "name": "movieparty",
+  "version": "1.0.0",
+  "description": "Upload a video(movie,series,etc), and watch it witch your friends online in a synchronized way ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./classes/server.js"
+  },
+  "engines": {
+    "node": "14.8.0"
+  },
+  "author": "zigbee",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

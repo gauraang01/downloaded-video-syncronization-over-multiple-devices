@@ -1,0 +1,33 @@
+.video {
+  width: 100%;
+  height: 100%;
+}
+
+.progress-bar-div {
+  flex: 1;
+}
+
+#progress-bar {
+  width: 100%;
+}
+
+body {
+  background: grey;
+}
+
+.video-c {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.video-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  padding: 5px;
+  bottom: 0;
+}
