@@ -74,7 +74,6 @@ class Server{
 
             // Stream the video chunk to the client
             videoStream.pipe(res);
-
         });
     }
 

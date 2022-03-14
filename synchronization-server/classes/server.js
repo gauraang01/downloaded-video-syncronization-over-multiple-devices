@@ -12,7 +12,7 @@ const rooms = [];
 class Server{
   
   constructor(){
-      this.PORT = 3000 || process.env
+      this.PORT = 3000 || process.env.PORT;
       this.initCreateServer();
       this.initSocketConnection();
       this.start();
@@ -60,7 +60,7 @@ class Server{
         function handleCreateRoom(){
         
             // Getting a random room number from makeid function
-            const roomCode = makeid(5);
+            const roomCode = makeid(10);
     
             // Creating an adding the room object to the rooms dictionary
             rooms[roomCode] = {
