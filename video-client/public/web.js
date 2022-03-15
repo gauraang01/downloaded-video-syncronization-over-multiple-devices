@@ -44,6 +44,7 @@ socket.on('connect', function () {
         form.style.display = "none";
         videoContainer.style.display = "block";
         
+        createRoomInput.value = socketData.roomCode;
         // Updating the socket with the room's current state
         socketData.roomCode = roomObject.code;
         console.log(socketData.roomCode);
@@ -101,6 +102,7 @@ function joinButtonHandler(){
         roomCode : joinRoomInput.value,
     }
     console.log(data.roomCode);
+
     socket.emit("join-room",data);
 }
 
