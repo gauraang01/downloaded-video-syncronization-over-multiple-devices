@@ -1,8 +1,15 @@
 // Connection to server
 
 // Deploy links: 
-let herokuLink = "https://movie-party-server.herokuapp.com/"; 
+let herokuLink = "https://synchronization-testing-server.herokuapp.com/"; 
+
 let localDeploy = "http://localhost:3000/";
+
+// Linking to socket conecction
+var socket = io.connect(herokuLink , {
+    reconnection: true
+});
+
 
 
 //Divs
@@ -21,10 +28,7 @@ const socketData={
     roomCode : "",
 };
 
-// Linking to socket conecction
-var socket = io.connect(localDeploy, {
-    reconnection: true
-});
+
 
 // On connection to socket
 socket.on('connect', function () {
