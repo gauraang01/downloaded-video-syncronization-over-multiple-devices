@@ -83,9 +83,6 @@ socket.on('connect', function () {
 
 
 
-
-
-
 // Form Div Buttons
 const joinBtn = document.getElementById('join-btn');
 const createBtn = document.getElementById('create-btn');
@@ -131,8 +128,8 @@ fullscreenBtn.addEventListener('click',openFullscreen);
 playPauseBtn.addEventListener('click',pauseOrstart);
 
 // Control volume
-volinc.addEventListener('click', alterVolume('+'));
-voldec.addEventListener('click', alterVolume('-'));
+volinc.addEventListener('click', incVolume);
+voldec.addEventListener('click', decVolume);
 
 // Control progressBar on update in the time
 vid.addEventListener('timeupdate', updateProgressBar);
@@ -187,15 +184,12 @@ function updateProgressBar(){
     progressBar.value = percentage;
 };
 
-
-// Function to change volume
-function alterVolume(dir){
+function incVolume(){
     var currentVolume = Math.floor(vid.volume * 10) / 10;
-   if (dir === '+') {
-      if (currentVolume < 1) vid.volume += 0.1;
-   }
-   else if (dir === '-') {
-      if (currentVolume > 0) vid.volume -= 0.1;
-   }
+    if (currentVolume < 1) vid.volume += 0.1;
 }
 
+function decVolume(){
+    var currentVolume = Math.floor(vid.volume * 10) / 10;
+    if (currentVolume > 0) vid.volume -= 0.1;
+}
