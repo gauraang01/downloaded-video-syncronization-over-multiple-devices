@@ -6,7 +6,7 @@ let herokuLink = "https://synchronization-testing-server.herokuapp.com/";
 let localDeploy = "http://localhost:3000/";
 
 // Linking to socket conecction
-var socket = io.connect(herokuLink , {
+var socket = io.connect(localDeploy , {
     reconnection: true
 });
 
@@ -21,7 +21,6 @@ const videoContainer = document.getElementById('videoContainer');
 //Input Fields
 const joinRoomInput = document.getElementById('join-room-input');
 const createRoomInput = document.getElementById('create-room-input');
-
 
 
 const socketData={
@@ -45,9 +44,10 @@ socket.on('connect', function () {
         videoContainer.style.display = "block";
         
         createRoomInput.value = socketData.roomCode;
+
         // Updating the socket with the room's current state
         socketData.roomCode = roomObject.code;
-        console.log(socketData.roomCode);
+        createRoomInput.value = socketData.roomCode;
     })
 
     // On recieving room created message
@@ -101,8 +101,6 @@ function joinButtonHandler(){
     let data = {
         roomCode : joinRoomInput.value,
     }
-    console.log(data.roomCode);
-
     socket.emit("join-room",data);
 }
 
