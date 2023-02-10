@@ -15,6 +15,7 @@ var socket = io.connect(localDeploy , {
 //Divs
 const form = document.getElementById('input-form');
 const videoContainer = document.getElementById('videoContainer');
+const toFull = document.getElementById('toFull');
 
 
 //Form Div
@@ -136,7 +137,7 @@ vid.addEventListener('timeupdate', updateProgressBar);
  
 // Changing the length of the progress-bar on user click
 progress.addEventListener('click', function(e){
-    var pos = (e.pageX  - this.offsetLeft) / this.offsetWidth;
+    var pos = (e.pageX  - this.offsetLeft -2) / this.offsetWidth;
     var newTime =pos * vid.duration;
 
     let data = {
@@ -167,12 +168,12 @@ function pauseOrstart(){
 
 // Open fullscreen mode
 function openFullscreen(){
-    if (videoContainer.requestFullscreen) {
-        videoContainer.requestFullscreen();
-      } else if (videoContainer.webkitRequestFullscreen) { /* Safari */
-        videoContainer.webkitRequestFullscreen();
-      } else if (videoContainer.msRequestFullscreen) { /* IE11 */
-        videoContainer.msRequestFullscreen();
+    if (toFull.requestFullscreen) {
+        toFull.requestFullscreen();
+      } else if (toFull.webkitRequestFullscreen) { /* Safari */
+        toFull.webkitRequestFullscreen();
+      } else if (toFull.msRequestFullscreen) { /* IE11 */
+        toFull.msRequestFullscreen();
       }
 }
 

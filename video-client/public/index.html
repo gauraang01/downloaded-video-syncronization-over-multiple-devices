@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.socket.io/3.1.1/socket.io.min.js" integrity="sha384-gDaozqUvc4HTgo8iZjwth73C6dDDeOJsAgpxBcMpZYztUfjHXpzrpdrHRdVp8ySO" crossorigin="anonymous"></script>
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
     <link rel="stylesheet" href="style.css">
-    <title>MOVIE party</title>
+    <title>Video party</title>
     <style>
       #videoContainer{
         display: none;
@@ -14,31 +17,56 @@
     </style>
 </head>
 <body>
-  <div class="box" id = "input-form">
-    <label for="join-room-input">Join Room</label>
-    <input type="text" id = "join-room-input"  placeholder="Enter room code">
-    <br><br>
+  <div class="Home" id = "input-form">
+    <h3 class='Home__title'>Video Party,</h3>
+    <h3 class='Home__subtitle'>Watch downloaded videos with friends in sync</h3>
 
-    <button id = "join-btn">Join</button>
-    <br><br> 
-    <button id = "create-btn">Create And Join</button>
+    <div class="Home__container">
+
+      <div class="Home__left">
+        <h3 class='left__title'>Would you like to join a room ?</h3>
+        <div class="left__data">
+          <label class="left__label" for="join-room-input">Room Code</label>
+          <input class="left__input" type="text" id = "join-room-input">
+        </div>
+        <button class="left__btn" id = "join-btn">Join</button>
+      </div>
+      
+      <div class="Home__mid">
+
+      </div>
+      <div class="Home__right">
+        <h3 class='right__title'>Would you like to create a room ?</h3>
+        <button class="right__btn" id = "create-btn">Create And Join</button>
+      </div>
+
+    </div>
   </div>
 
-  <div id = videoContainer>
-    <label for="create-room-input">Room Code</label>
-    <input type="text" id = "create-room-input"  placeholder=" Code" disabled>
-    <br><br>
-    <div class = "video-c">
-      <video id = "videoPlayer" class = "video">
-          <source src = "/video" type = "video/mp4"/>
-      </video>
-      <div class="video-controls">
-        <div><button id = "play-pause">&#9658</button></div>
-        <div class = "progress-bar-div"><progress id = "progress-bar" max = 100 min =0></progress></div>
-        <div><button id="volinc" type="button">Vol+</button></div>
-        <div><button id="voldec" type="button">Vol-</button></div>
-        <div><button id = "fullscreen">Fullscreen</button></div>
+  <div  id = videoContainer>
+    <div class="grid">
+      <div class = "video-c" id="toFull">
+          <video id = "videoPlayer" class = "video">
+              <source src = "/video" type = "video/mp4"/>
+          </video>
+          <div class="video-controls">
+            <div><button id = "play-pause">&#9658</button></div>
+            <div class = "progress-bar-div"><progress id = "progress-bar" max = 100 min =0></progress></div>
+            <div><button id="volinc" type="button"><i class="uil uil-volume"></i></button></div>
+            <div><button id="voldec" type="button"><i class="uil uil-volume-down"></i></button></div>
+            <div><button id = "fullscreen"><i class="uil uil-expand-arrows-alt"></i></button></div>
+          </div>
       </div>
+
+      <div class="room">
+        <div class="room__data">
+          <label class="room__label" for="create-room-input">Room Code</label>
+          <input  class="room__input" type="text" id = "create-room-input"  placeholder=" Code" disabled>
+        </div>
+        
+        <h3>Share this code, to let others join your room</h3>
+      </div>
+
     </div>
   </div>
 </body>
