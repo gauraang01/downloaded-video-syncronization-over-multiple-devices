@@ -27,7 +27,7 @@ Node and npm should be installed
         <li>Run the command npm start</li>
     </ol>
     
-    <li><b>Open another window in the ide</b></li>
+    <li>Open another window in the ide</li>
     
     <ol>    
         <li>Open the movie-client directory here</li>
