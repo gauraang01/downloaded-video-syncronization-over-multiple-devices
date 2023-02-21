@@ -9,6 +9,7 @@ const {makeid} = require('./utils/utils');
 // Stores data about all the rooms
 const rooms = [];
 const PORT = 3000
+
 // Setting up the http server
 const app = express();  
 const server = require('http').createServer(app);  
