@@ -16,6 +16,7 @@ The project works in the node.js environment and is divided into two different c
 
 The video that needs to be watched in sync is downloaded and the client codebase is run across all devices. When a user starts a video the current time along with the start signal is sent to the server which further transmits the signal to all the connected clients, similarly, other signals like pause or seek are transmitted across all the connected clients and video u are able to watch the video in sync even at a low bandwidth
 
+The video player at the client's side render's the video in small chunks, to improve the resource efficiency 
 # Features:
 * Low bandwidth usage to play videos in sync.
 * Ability to handle multiple clients watching the same video, by allowing them to create rooms.
