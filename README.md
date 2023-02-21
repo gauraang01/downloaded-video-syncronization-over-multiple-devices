@@ -1,6 +1,9 @@
 # Project Title
 SyncPlay
 
+# Inspiration
+Amidst the COVID quarantine, I started this project to watch movies and videos in sync with my friends, some of whom had limited internet connectivity and preferred to download the videos. As such i wanted to build a solution that allowed us to have a fun time, and connect socially regardless of internet speed or location. This experience taught me the power of technology to bring people together, even in challenging times.
+
 # Objective:
 The main objective of this project is to enable users to play locally downloaded videos and movies in sync across different devices using low bandwidth.
 
